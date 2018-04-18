@@ -1,0 +1,8 @@
+name: delete
+shortDesc: Allows you to delete any kubectl plugin
+longDesc: |
+  Shell script that will delete a plugin that was installed via github.
+
+  $ kubectl plugin delete ssh
+example: kubectl plugin delete <repo-name>
+command: ./delete.sh

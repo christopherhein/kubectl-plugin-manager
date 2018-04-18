@@ -1,0 +1,53 @@
+= kubectl Plugin Manager
+
+This will install three subcommands under the `kubectl plugin` subcommand that
+will help you in managing plugins that you have installed.
+
+== Installation
+
+[source,shell]
+----
+git clone https://github.com/christopherhein/kubectl-plugin-manager.git ~/.kube/plugins/plugin-manager
+----
+
+== Usage
+
+Installing plugins into the `~/.kubectl/plugins/` directory. All you need is an
+github repo with organization. For example
+https://github.com/christopherhein/kubectl-ssh this will use the `git` cli to
+pull the repo and will automatically remove the `kubectl-` making the subcommand
+live under `~/.kube/plugins/ssh`. You can customize this directory path with the
+`-p` flag, or `--plugin-name`.
+
+[source,shell]
+----
+kubectl plugin install <repo-name>
+# kubectl plugin install christopherhein/kubectl-ssh
+----
+
+Updating plugins in the `~/.kube/plugins/{plugin-name}` via git is as simple as
+issuing `update {plugin-name}`. This will `cd` into the directory and `git
+pull`.
+
+[source,shell]
+----
+kubectl plugin update {plugin-name}
+# kubectl plugin update ssh
+----
+
+Last, delete a plugin in the `~/.kube/plugins/{plugin-name}` by issuing an `rm`
+on the directory.
+
+[source,shell]
+----
+kubectl plugin delete {plugin-name}
+# kubectl plugin delete ssh
+----
+
+To get more information on any of the plugins commands pass `-h`. This will
+print the full usage.
+
+== License
+
+See link:LICENSE[License] for more information.
+

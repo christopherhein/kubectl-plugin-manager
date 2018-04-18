@@ -1,0 +1,13 @@
+name: install
+shortDesc: Allows you to install any kubectl plugin
+longDesc: |
+  Shell script that will install a plugin based on the github repo, replacing
+  the need to remember where to install your plugins.
+
+  $ kubectl plugin install christopherhein/ssh
+example: kubectl plugin install <repo-name>
+command: ./install.sh
+flags:
+  - name: plugin-name
+    shorthand: p
+    desc: name of the package incase of conflicts

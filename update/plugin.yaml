@@ -1,0 +1,8 @@
+name: update
+shortDesc: Allows you to update any kubectl plugin
+longDesc: |
+  Shell script that will update a plugin that was installed via github.
+
+  $ kubectl plugin update ssh
+example: kubectl plugin update <repo-name>
+command: ./update.sh
